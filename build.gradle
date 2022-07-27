@@ -15,16 +15,23 @@ repositories {
     mavenCentral()
 }
 
+ext {
+    springVersion = '5.3.20'
+    logbackVersion = '1.2.11'
+    lombokVersion = '1.18.24'
+    junitVersion = '5.8.2'
+}
+
 dependencies {
-    implementation 'org.springframework:spring-context:5.3.20'
-    implementation 'org.springframework:spring-core:5.3.20'
-    implementation 'org.springframework:spring-beans:5.3.20'
-    implementation 'ch.qos.logback:logback-classic:1.2.11'
-    implementation 'ch.qos.logback:logback-core:1.2.11'
-    implementation 'org.projectlombok:lombok:1.18.24'
-    annotationProcessor 'org.projectlombok:lombok:1.18.24'
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+    implementation "org.springframework:spring-context:$springVersion"
+    implementation "org.springframework:spring-core:$springVersion"
+    implementation "org.springframework:spring-beans:$springVersion"
+    implementation "ch.qos.logback:logback-classic:$logbackVersion"
+    implementation "ch.qos.logback:logback-core:$logbackVersion"
+    implementation "org.projectlombok:lombok:$lombokVersion"
+    annotationProcessor "org.projectlombok:lombok:$lombokVersion"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
 }
 
 test {
