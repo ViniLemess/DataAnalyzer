@@ -37,17 +37,15 @@ public class DirectoryWatcherService {
         }
     }
 
-    private boolean generateReport(String newFile) {
+    private void generateReport(String newFile) {
         if (isFileExtensionValid(newFile)) {
             try {
                 reportService.generateReportFile(newFile);
                 log.info("Generating new metrics for file : " + newFile);
-                return true;
             } catch (Exception exception) {
                 log.error(exception.getMessage());
             }
         }
-        return false;
     }
 
     private boolean isFileExtensionValid(String file) {
