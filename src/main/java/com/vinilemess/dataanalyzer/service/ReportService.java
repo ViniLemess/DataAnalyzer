@@ -58,7 +58,7 @@ public class ReportService {
         return worstSalesmanName;
     }
 
-    public String generateReportFile(String fileName) {
+    public void generateReportFile(String fileName) {
         String newFilePath = outputDataPath+"/"+fileName.replace(".dat", ".done.dat");
         String report = "Amount of customers: " + getAmountCustomers(fileName) + "\n"
                 + "Amount of salesman: " + getAmountSalesman(fileName) + "\n"
@@ -66,7 +66,6 @@ public class ReportService {
                 + "Worst Salesman: " + getWorstSalesman(fileName);
         try {
             Files.write(Paths.get(newFilePath), Collections.singleton(report));
-            return report;
         } catch (IOException e) {
             throw new UnableToWrightFileException(e.getMessage());
         }
