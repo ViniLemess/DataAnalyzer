@@ -29,9 +29,9 @@ public class DataExtractionService {
     @Autowired
     public DataExtractionService(ConverterService converterService) {
         this.converterService = converterService;
-        this.salesmanPattern = Pattern.compile("001ç(\\d+)ç([a-zA-Z ]*|[a-z-A-Z]+)ç(\\d+[.]\\d+|\\d+)");
-        this.customerPattern = Pattern.compile("002ç(\\d+)ç([a-zA-Z ]*|[a-z-A-Z]+)ç([a-zA-Z ]*|[a-z-A-Z]+)");
-        this.salePattern = Pattern.compile("003ç\\d+ç\\[(\\d+-\\d+-(\\d+[.]\\d+|\\d+)(,?))+\\]ç([a-zA-Z ]*|[a-z-A-Z]+)");
+        this.salesmanPattern = Pattern.compile("001ç(\\d+)ç([a-zA-ZÀ-ú ]*|[a-z-A-ZÀ-ú]+)ç(\\d+[.]\\d+|\\d+)");
+        this.customerPattern = Pattern.compile("002ç(\\d+)ç([a-zA-ZÀ-ú ]*|[a-z-A-ZÀ-ú]+)ç([a-zA-ZÀ-ú ]*|[a-z-A-ZÀ-ú]+)");
+        this.salePattern = Pattern.compile("003ç\\d+ç\\[(\\d+-\\d+-(\\d+[.]\\d+|\\d+)(,?))+\\]ç([a-zA-ZÀ-ú ]*|[a-z-A-ZÀ-ú]+)");
         this.inputDataPath = System.getenv("DATA_IN");
     }
 
